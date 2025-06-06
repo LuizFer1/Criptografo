@@ -9,8 +9,7 @@ class EmailClient:
     def __init__(self):
         self.smtp_server = "smtp.gmail.com"
         self.smtp_port = 465
-        self.username = "luizfdantasdev@gmail.com"
-        self.password = "eaco xoee rlpv fngn"
+
 
     def send_email(self, recipient, subject, message):
         try:
@@ -83,12 +82,10 @@ class EmailClient:
         return emails
 
 
-    def encrypt_message(self, message):
+    def encrypt_message(self, message, key=b'bt9w_TOJD5_bb0DyNt4oNIqsPzFqtDZXwCJRqhbriWI='):
         from encryption import encrypt_message
-        key = b'bt9w_TOJD5_bb0DyNt4oNIqsPzFqtDZXwCJRqhbriWI='
         return encrypt_message(message, key)
 
-    def decrypt_message(self, encrypted_message):
+    def decrypt_message(self, encrypted_message, key=b'bt9w_TOJD5_bb0DyNt4oNIqsPzFqtDZXwCJRqhbriWI='):
         from encryption import decrypt_message
-        key = b'bt9w_TOJD5_bb0DyNt4oNIqsPzFqtDZXwCJRqhbriWI='
         return decrypt_message(encrypted_message, key)
